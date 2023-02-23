@@ -7,8 +7,23 @@ depends: [
   "base-nnp" {= "base"}
   "base-threads" {= "base"}
   "base-unix" {= "base"}
+  "dune" {= "3.7.0"}
   "ocaml" {= "5.0.0"}
   "ocaml-base-compiler" {= "5.0.0"}
   "ocaml-config" {= "3"}
   "ocaml-options-vanilla" {= "1"}
+]
+build: [
+  ["dune" "subst"] {dev}
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+  ]
 ]
