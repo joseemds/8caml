@@ -40,3 +40,12 @@ module Register = struct
     | VF -> 0xF
     | _ -> failwith "Not implemented"
 end
+
+module Timer = struct
+  type timer
+
+  type t = {
+    delay: timer;
+    sound: timer;
+  }
+end

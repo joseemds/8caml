@@ -1,0 +1,3 @@
+(tests
+  (names nibble test)
+  (libraries ecaml alcotest))
